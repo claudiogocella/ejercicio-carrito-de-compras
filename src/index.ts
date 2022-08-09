@@ -24,7 +24,7 @@ const agregarAlCarrito = () => {
   precios.push(Number(precio.value));
 
   lista?.innerHTML += `<li>${producto.value} : $${precio.value}</li>`;
-  //vaciar los campos de entada
+  //vaciar los campos de entrada
   producto.value = "";
   precio.value = "";
 };
@@ -34,23 +34,22 @@ const calcularTotal = () => {
   for (let i: number = 0; i < precios.length; i++) {
     suma += Number(precios[i]);
   }
-  //console.log(precios);
   total?.innerHTML = suma;
 };
 
-//const vaciarLista = () => {
-//lista?.innerHTML = "";
-//total.innerHTML = "";
-//}
-
+const vaciarLista = () => {
+  lista?.innerHTML = "";
+  total.innerHTML = "";
+};
+//agregar eventos a los botones
 agregar?.addEventListener("click", agregarAlCarrito);
 calcular?.addEventListener("click", calcularTotal);
 vaciar?.addEventListener("click", vaciarLista);
 
 //------------------------------
 
-let producto = {
-  id: 1,
-  nombre: "leche",
-  precio: 150
-};
+//let productos = {
+//id: 1
+//nombre: "leche",
+//precio: 150
+//};
